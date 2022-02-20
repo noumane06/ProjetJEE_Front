@@ -1,0 +1,25 @@
+    <div class="col-lg-6 col-sm-12">
+      <div class="card m-b-30">
+        <div class="card-body" >
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead class="thead-dark">
+              <tr>
+                <th scope="col">Clients</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr  *ngIf="customers">
+                <ng-container *ngFor="let c of customers._embedded.customers" class="list-group-item">
+                  <td style="display: block">
+                    {{c.name}}
+                  </td>
+                </ng-container>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+

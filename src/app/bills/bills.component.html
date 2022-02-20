@@ -1,0 +1,53 @@
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+    <div class="card m-b-30">
+      <div class="card-body" >
+        <div class="table-responsive-sm">
+          <table class="table">
+            <thead class="thead-dark">
+            <tr>
+              <th scope="col">N° de Facture</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr  *ngIf="bills">
+                <ng-container *ngFor="let b of bills._embedded.bills" class="list-group-item">
+                  <td style="display: block" (click)="onGetProducts(b)">
+                    {{b.customerID}}
+                  </td>
+                </ng-container>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-lg-6 col-sm-12" *ngIf="products">
+      <div class="card m-b-30">
+        <div class="card-body" >
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Liste Des Produits</th>
+                <th scope="col">Prix</th>
+              </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let p of products._embedded.productItems">
+                  <tr>
+                  <td style="display: block">
+                    {{p.productID}}
+                  </td>
+                  <td colspan="1">
+                    {{p.price}}
+                  </td>
+                  </tr>
+                </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
